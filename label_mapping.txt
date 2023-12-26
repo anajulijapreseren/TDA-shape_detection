@@ -1,0 +1,3 @@
+sphere:0
+circle:1
+line_segment:2
