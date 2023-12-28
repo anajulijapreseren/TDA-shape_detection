@@ -51,10 +51,10 @@ def main():
             shape_data.append((index, point_cloud, label))  # Include index with each shape
             index += 1  # Increment the index
 
-    with open('shapes_data.pkl', 'wb') as file:
+    with open('Data/shapes_data.pkl', 'wb') as file:
         pickle.dump(shape_data, file)
 
-    with open('label_mapping.txt', 'w') as file:
+    with open('Data/label_mapping.txt', 'w') as file:
         for shape_name, label in label_mapping.items():
             file.write(f"{shape_name}:{label}\n")
 

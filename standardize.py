@@ -26,13 +26,9 @@ def scale_and_center_point_cloud(point_cloud, target_size=1.0):
     
     # Calculate the centroid of the point cloud
     centroid = np.mean(point_cloud, axis=0)
-    print(f"centroid:{centroid}")
     
     # Translate the centroid of the point cloud to the origin
     translated_point_cloud = point_cloud - centroid
-
-    translated_centroid = np.mean(translated_point_cloud, axis=0)
-    print(f"transleted centroid:{translated_centroid}")
 
     # Calculate the scale factor (assuming isotropic scaling)
     scale_factor = target_size / np.max(bbox_dims)
@@ -46,7 +42,7 @@ def scale_and_center_point_cloud(point_cloud, target_size=1.0):
 
 if __name__ == "__main__":
     # Load the original shape data
-    with open('shapes_data.pkl', 'rb') as file:
+    with open('Data/shapes_data.pkl', 'rb') as file:
         original_shape_data = pickle.load(file)
 
     # Apply the scaling and centering function
@@ -56,43 +52,8 @@ if __name__ == "__main__":
         scaled_shape_data.append((idx, scaled_and_centered_point_cloud, label))  # Keep the original index
 
     # Save the scaled and centered data with indices
-    with open('scaled_centered_shapes_data.pkl', 'wb') as file:
+    with open('Data/scaled_centered_shapes_data.pkl', 'wb') as file:
         pickle.dump(scaled_shape_data, file)
 
     print("Scaled and centered shapes and labels saved successfully.")
-
-
-# import numpy as np
-
-# def scale_point_cloud(point_cloud, target_size=1):
-#     # Calculate the bounding box dimensions
-#     min_coords = np.min(point_cloud, axis=0)
-#     max_coords = np.max(point_cloud, axis=0)
-#     bbox_dims = max_coords - min_coords
-
-#     # Calculate the scale factor (assuming isotropic scaling)
-#     scale_factor = target_size / np.max(bbox_dims)
-
-#     # Scale the point cloud
-#     scaled_point_cloud = (point_cloud - min_coords) * scale_factor
-
-#     return scaled_point_cloud
-
-# if __name__ == "__main__":
-#     import pickle
-#     # Load the original shape data
-#     with open('shapes_data.pkl', 'rb') as file:
-#         original_shape_data = pickle.load(file)
-
-#     # Apply the scaling function
-#     scaled_shape_data = []
-#     for idx, point_cloud, label in original_shape_data:  # Unpack index, point cloud, and label
-#         scaled_point_cloud = scale_point_cloud(point_cloud, target_size=1.5)
-#         scaled_shape_data.append((idx, scaled_point_cloud, label))  # Keep the original index
-
-#     # Save the scaled data with indices
-#     with open('scaled_shapes_data.pkl', 'wb') as file:
-#         pickle.dump(scaled_shape_data, file)
-
-#     print("Scaled shapes and labels saved successfully.")
 
