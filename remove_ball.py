@@ -1,3 +1,21 @@
+"""
+This script includes a function 'remove_center_ball' designed to process 3D point clouds by removing a specified spherical region 
+from the origin. 
+
+The main execution block of the script, when run, applies this function to a collection of pre-processed point clouds that are 
+already scaled and centered around the origin (0, 0, 0). These point clouds are loaded from 'scaled_centered_shapes_data.pkl', 
+which includes the original indices and labels.
+
+Each modified point cloud, with the central ball of points removed, is then appended to a list along with its original index and label. 
+This modified data is subsequently saved in a new file named 'modified_shapes_data.pkl'. This file maintains the order and classification 
+of the original data while introducing the specified modification.
+
+Input: Scaled and centered point clouds with original indices and labels (from 'scaled_centered_shapes_data.pkl').
+Output: Point clouds with a central spherical region removed, along with original indices and labels, saved in 'modified_shapes_data.pkl'.
+"""
+
+
+
 import numpy as np
 import pickle
 
