@@ -64,7 +64,8 @@ def parallel_process_shapes(shape_data, num_processes=8):
 if __name__ == "__main__":
 
     # Load the scaled and centered shape data
-    with open('Data/scaled_centered_shapes_data.pkl', 'rb') as file:
+    #with open('Data/scaled_centered_shapes_data.pkl', 'rb') as file:
+    with open('Data/m_scaled_centered_shapes_data.pkl', 'rb') as file:
         shape_data = pickle.load(file)
 
     # Start timer
@@ -74,20 +75,23 @@ if __name__ == "__main__":
     processed_data = parallel_process_shapes(shape_data)
 
     # Save the results including indices
-    with open('Data/flattened_images_with_indices.pkl', 'wb') as f:
+    #with open('Data/flattened_images_with_indices.pkl', 'wb') as f:
+    with open('Data/m_flattened_images_with_indices.pkl', 'wb') as f:
         pickle.dump(processed_data, f)
 
     print("All shapes processed and results saved.")
 
     # Load the scaled and centered shape data without the ball of points
-    with open('Data/modified_shapes_data.pkl', 'rb') as file:
+    #with open('Data/modified_shapes_data.pkl', 'rb') as file:
+    with open('Data/m_modified_shapes_data.pkl', 'rb') as file:
         shape_data = pickle.load(file)
 
     # Process shapes in parallel
     processed_data = parallel_process_shapes(shape_data)
 
     # Save the results including indices
-    with open('Data/flattened_images_removed_ball_with_indices.pkl', 'wb') as f:
+    #with open('Data/flattened_images_removed_ball_with_indices.pkl', 'wb') as f:
+    with open('Data/m_flattened_images_removed_ball_with_indices.pkl', 'wb') as f:
         pickle.dump(processed_data, f)
 
     print("All shapes without ball of points processed and results saved.")

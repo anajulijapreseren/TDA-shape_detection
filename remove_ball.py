@@ -32,7 +32,8 @@ def remove_center_ball(point_cloud, radius=0.3):
 
 if __name__ == "__main__":
     # Load the scaled shape data
-    with open('Data/scaled_centered_shapes_data.pkl', 'rb') as file:
+    #with open('Data/scaled_centered_shapes_data.pkl', 'rb') as file:
+    with open('Data/m_scaled_centered_shapes_data.pkl', 'rb') as file:
         scaled_shape_data = pickle.load(file)
 
     # Process each shape to remove the center ball
@@ -42,7 +43,8 @@ if __name__ == "__main__":
         modified_shape_data.append((idx, modified_point_cloud, label))
 
     # Save the modified data
-    with open('Data/modified_shapes_data.pkl', 'wb') as file:
+    #with open('Data/modified_shapes_data.pkl', 'wb') as file:
+    with open('Data/m_modified_shapes_data.pkl', 'wb') as file:
         pickle.dump(modified_shape_data, file)
 
     print("Modified shapes (with center ball removed) and labels saved successfully.")

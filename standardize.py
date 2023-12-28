@@ -42,7 +42,8 @@ def scale_and_center_point_cloud(point_cloud, target_size=1.0):
 
 if __name__ == "__main__":
     # Load the original shape data
-    with open('Data/shapes_data.pkl', 'rb') as file:
+    #with open('Data/shapes_data.pkl', 'rb') as file:
+    with open('m_shapes_data.pkl', 'rb') as file:
         original_shape_data = pickle.load(file)
 
     # Apply the scaling and centering function
@@ -52,7 +53,8 @@ if __name__ == "__main__":
         scaled_shape_data.append((idx, scaled_and_centered_point_cloud, label))  # Keep the original index
 
     # Save the scaled and centered data with indices
-    with open('Data/scaled_centered_shapes_data.pkl', 'wb') as file:
+    #with open('Data/scaled_centered_shapes_data.pkl', 'wb') as file:
+    with open('Data/m_scaled_centered_shapes_data.pkl', 'wb') as file:
         pickle.dump(scaled_shape_data, file)
 
     print("Scaled and centered shapes and labels saved successfully.")

@@ -22,14 +22,17 @@ def combine_data(file_path1, file_path2):
     return combined_data
 
 # Paths to your files
-file_path1 = 'Data/flattened_images_with_indices.pkl'
-file_path2 = 'Data/flattened_images_removed_ball_with_indices.pkl'
+# file_path1 = 'Data/flattened_images_with_indices.pkl'
+# file_path2 = 'Data/flattened_images_removed_ball_with_indices.pkl'
+file_path1 = 'Data/m_flattened_images_with_indices.pkl'
+file_path2 = 'Data/m_flattened_images_removed_ball_with_indices.pkl'
 
 # Combine the data
 combined_data = combine_data(file_path1, file_path2)
 
 # Save the combined data
-with open('Data/combined_flattened_data_with_indices.pkl', 'wb') as file:
+#with open('Data/combined_flattened_data_with_indices.pkl', 'wb') as file:
+with open('Data/m_combined_flattened_data_with_indices.pkl', 'wb') as file:
     pickle.dump(combined_data, file)
 
 print("Combined data saved successfully.")
