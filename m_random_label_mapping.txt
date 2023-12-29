@@ -1,0 +1,8 @@
+sphere:0
+circle:1
+line_segment:2
+torus:3
+flat_disc:4
+ellipsoid:5
+perturbed_3_disc:6
+rectangle:7
