@@ -138,3 +138,13 @@
 137: num_points: 800, a=1, b=0.7, c=0.4
 138: num_points: 800, a=1, b=0.6, c=0.4
 139: num_points: 800, a=1, b=0.6, c=0.3
+140: num_points: 850, a=1, b=0.8, c=0.2
+141: num_points: 850, a=1, b=0.7, c=0.4
+142: num_points: 850, a=1, b=0.6, c=0.4
+143: num_points: 850, a=1, b=0.6, c=0.3
+144: num_points: 900, a=1, b=0.8, c=0.2
+145: num_points: 900, a=1, b=0.7, c=0.4
+146: num_points: 900, a=1, b=0.6, c=0.4
+147: num_points: 900, a=1, b=0.6, c=0.3
+148: num_points: 950, a=1, b=0.8, c=0.2
+149: num_points: 950, a=1, b=0.7, c=0.4

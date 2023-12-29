@@ -1,0 +1,56 @@
+1) Parametri: target_size=2, remove_ball_radius=0.5
+
+TEST:Accuracy: 0.86
+Class 'sphere': Correctly classified: 4, Incorrectly classified: 2
+Class 'circle': Correctly classified: 6, Incorrectly classified: 0
+Class 'line_segment': Correctly classified: 6, Incorrectly classified: 0
+Class 'torus': Correctly classified: 6, Incorrectly classified: 0
+Class 'flat_disc': Correctly classified: 5, Incorrectly classified: 1
+Class 'ellipsoid': Correctly classified: 4, Incorrectly classified: 2
+Class 'perturbed_3_disc': Correctly classified: 5, Incorrectly classified: 1
+
+Misclassified Shapes:
+Index: 10, Original Class: sphere, Predicted Class: ellipsoid
+Index: 11, Original Class: ellipsoid, Predicted Class: flat_disc
+Index: 19, Original Class: flat_disc, Predicted Class: perturbed_3_disc
+Index: 25, Original Class: perturbed_3_disc, Predicted Class: flat_disc
+Index: 30, Original Class: ellipsoid, Predicted Class: flat_disc
+Index: 37, Original Class: sphere, Predicted Class: ellipsoid
+
+TRAIN:Accuracy: 0.85
+Training Data - Class 'sphere': Correctly classified: 9, Incorrectly classified: 5
+Training Data - Class 'circle': Correctly classified: 14, Incorrectly classified: 0
+Training Data - Class 'line_segment': Correctly classified: 14, Incorrectly classified: 0
+Training Data - Class 'torus': Correctly classified: 13, Incorrectly classified: 1
+Training Data - Class 'flat_disc': Correctly classified: 12, Incorrectly classified: 2
+Training Data - Class 'ellipsoid': Correctly classified: 10, Incorrectly classified: 4
+Training Data - Class 'perturbed_3_disc': Correctly classified: 11, Incorrectly classified: 3
+
+Accuracy: 0.86
+Looking for original index: 59
+Test Sample 1 - Predicted Class: line_segment, Actual Class: line_segment
+Looking for original index: 43
+Test Sample 2 - Predicted Class: line_segment, Actual Class: line_segment
+Looking for original index: 131
+Test Sample 3 - Predicted Class: perturbed_3_disc, Actual Class: perturbed_3_disc
+Looking for original index: 76
+Test Sample 4 - Predicted Class: torus, Actual Class: torus
+Looking for original index: 14
+Test Sample 5 - Predicted Class: sphere, Actual Class: sphere
+
+Misclassified Shapes in Training Set:
+Index: 27, Original Class: flat_disc, Predicted Class: perturbed_3_disc
+Index: 28, Original Class: perturbed_3_disc, Predicted Class: flat_disc
+Index: 34, Original Class: sphere, Predicted Class: ellipsoid
+Index: 42, Original Class: perturbed_3_disc, Predicted Class: flat_disc
+Index: 44, Original Class: sphere, Predicted Class: ellipsoid
+Index: 45, Original Class: ellipsoid, Predicted Class: torus
+Index: 49, Original Class: ellipsoid, Predicted Class: flat_disc
+Index: 55, Original Class: flat_disc, Predicted Class: perturbed_3_disc
+Index: 65, Original Class: sphere, Predicted Class: torus
+Index: 68, Original Class: torus, Predicted Class: ellipsoid
+Index: 75, Original Class: sphere, Predicted Class: ellipsoid
+Index: 79, Original Class: perturbed_3_disc, Predicted Class: flat_disc
+Index: 88, Original Class: ellipsoid, Predicted Class: sphere
+Index: 94, Original Class: sphere, Predicted Class: ellipsoid
+Index: 96, Original Class: ellipsoid, Predicted Class: torus
