@@ -5,3 +5,4 @@ torus:3
 flat_disc:4
 ellipsoid:5
 perturbed_3_disc:6
+rectangle:7

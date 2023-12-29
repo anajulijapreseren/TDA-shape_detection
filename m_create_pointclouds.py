@@ -75,7 +75,11 @@ def create_perturbed_3_disc(num_points=300, a=1, b=0.8, c=0.6, rand=rand):
 
 
 
-
+def create_rectangle(num_points=300, a=1, b=0.4, rand=rand):
+    x = np.random.uniform(-a/2 + rand, a/2 + rand, num_points)
+    y = np.random.uniform(-b/2 + rand, b/2 + rand, num_points)
+    z = np.random.uniform(-0.05, 0.05, num_points)
+    return np.column_stack((x, y, z))
 
 
 #tu notri dodaš zadeve, ki jih na novo napišeš, vse te oblike bo generiralo in jih tudi označilo z 0,1,2...glede na obliko
@@ -89,7 +93,8 @@ def main():
         'torus': create_torus,
         'flat_disc': create_flat_disc,
         'ellipsoid': create_ellipsoid,
-        'perturbed_3_disc': create_perturbed_3_disc
+        'perturbed_3_disc': create_perturbed_3_disc,
+        'rectangle': create_rectangle
 
     }
 
@@ -100,6 +105,7 @@ def main():
     abc_list = [[1, 0.8, 0.2], [1, 0.7, 0.4], [1, 0.6, 0.4], [1, 0.6, 0.3]]
     torus_list = [[1, 0.3], [1, 0.4], [1, 0.5], [1, 0.6]]
     other_list = [0.8, 0.9, 1, 1.1]
+    rectangle_list = [[1, 0.8], [1.2, 0.6], [1.3, 0.6], [0.5, 0.9]]
 
     for label, generator in enumerate(shape_generators.items()):
         shape_name, shape_func = generator
@@ -117,6 +123,10 @@ def main():
                 R, r = torus_list[i%4]
                 point_cloud = shape_func(num_points=n, R=R, r=r)
                 par = (f"num_points: {n}, R={R}, r={r}")
+            elif shape_name == 'rectangle':
+                a, b = rectangle_list[i%4]
+                point_cloud = shape_func(num_points=n, a=a, b=b)
+                par = (f"num_points: {n}, a={a}, b={b}")
             else:
                 r = other_list[i%4]
                 point_cloud = shape_func(num_points=n, radius=r)
