@@ -1,0 +1,150 @@
+0: num_points: 300, r=0.9
+1: num_points: 300, r=1
+2: num_points: 300, r=1.1
+3: num_points: 300, r=0.9
+4: num_points: 300, r=1
+5: num_points: 300, r=1.1
+6: num_points: 350, r=0.9
+7: num_points: 350, r=1
+8: num_points: 350, r=1.1
+9: num_points: 350, r=0.9
+10: num_points: 350, r=1
+11: num_points: 350, r=1.1
+12: num_points: 400, r=0.9
+13: num_points: 400, r=1
+14: num_points: 400, r=1.1
+15: num_points: 400, r=0.9
+16: num_points: 400, r=1
+17: num_points: 400, r=1.1
+18: num_points: 450, r=0.9
+19: num_points: 450, r=1
+20: num_points: 450, r=1.1
+21: num_points: 450, r=0.9
+22: num_points: 450, r=1
+23: num_points: 450, r=1.1
+24: num_points: 500, r=0.9
+25: num_points: 500, r=1
+26: num_points: 500, r=1.1
+27: num_points: 500, r=0.9
+28: num_points: 500, r=1
+29: num_points: 500, r=1.1
+30: num_points: 300, r=0.9
+31: num_points: 300, r=1
+32: num_points: 300, r=1.1
+33: num_points: 300, r=0.9
+34: num_points: 300, r=1
+35: num_points: 300, r=1.1
+36: num_points: 350, r=0.9
+37: num_points: 350, r=1
+38: num_points: 350, r=1.1
+39: num_points: 350, r=0.9
+40: num_points: 350, r=1
+41: num_points: 350, r=1.1
+42: num_points: 400, r=0.9
+43: num_points: 400, r=1
+44: num_points: 400, r=1.1
+45: num_points: 400, r=0.9
+46: num_points: 400, r=1
+47: num_points: 400, r=1.1
+48: num_points: 450, r=0.9
+49: num_points: 450, r=1
+50: num_points: 450, r=1.1
+51: num_points: 450, r=0.9
+52: num_points: 450, r=1
+53: num_points: 450, r=1.1
+54: num_points: 500, r=0.9
+55: num_points: 500, r=1
+56: num_points: 500, r=1.1
+57: num_points: 500, r=0.9
+58: num_points: 500, r=1
+59: num_points: 500, r=1.1
+60: num_points: 300, r=0.9
+61: num_points: 300, r=1
+62: num_points: 300, r=1.1
+63: num_points: 300, r=0.9
+64: num_points: 300, r=1
+65: num_points: 300, r=1.1
+66: num_points: 350, r=0.9
+67: num_points: 350, r=1
+68: num_points: 350, r=1.1
+69: num_points: 350, r=0.9
+70: num_points: 350, r=1
+71: num_points: 350, r=1.1
+72: num_points: 400, r=0.9
+73: num_points: 400, r=1
+74: num_points: 400, r=1.1
+75: num_points: 400, r=0.9
+76: num_points: 400, r=1
+77: num_points: 400, r=1.1
+78: num_points: 450, r=0.9
+79: num_points: 450, r=1
+80: num_points: 450, r=1.1
+81: num_points: 450, r=0.9
+82: num_points: 450, r=1
+83: num_points: 450, r=1.1
+84: num_points: 500, r=0.9
+85: num_points: 500, r=1
+86: num_points: 500, r=1.1
+87: num_points: 500, r=0.9
+88: num_points: 500, r=1
+89: num_points: 500, r=1.1
+90: num_points: 600, a=1, b=0.8, c=0.2, d=0.4
+91: num_points: 600, a=1, b=0.7, c=0.4, d=0.4
+92: num_points: 600, a=1, b=0.6, c=0.3, d=0.5
+93: num_points: 600, a=1, b=0.8, c=0.2, d=0.4
+94: num_points: 600, a=1, b=0.7, c=0.4, d=0.4
+95: num_points: 600, a=1, b=0.6, c=0.3, d=0.5
+96: num_points: 650, a=1, b=0.8, c=0.2, d=0.4
+97: num_points: 650, a=1, b=0.7, c=0.4, d=0.4
+98: num_points: 650, a=1, b=0.6, c=0.3, d=0.5
+99: num_points: 650, a=1, b=0.8, c=0.2, d=0.4
+100: num_points: 650, a=1, b=0.7, c=0.4, d=0.4
+101: num_points: 650, a=1, b=0.6, c=0.3, d=0.5
+102: num_points: 700, a=1, b=0.8, c=0.2, d=0.4
+103: num_points: 700, a=1, b=0.7, c=0.4, d=0.4
+104: num_points: 700, a=1, b=0.6, c=0.3, d=0.5
+105: num_points: 700, a=1, b=0.8, c=0.2, d=0.4
+106: num_points: 700, a=1, b=0.7, c=0.4, d=0.4
+107: num_points: 700, a=1, b=0.6, c=0.3, d=0.5
+108: num_points: 750, a=1, b=0.8, c=0.2, d=0.4
+109: num_points: 750, a=1, b=0.7, c=0.4, d=0.4
+110: num_points: 750, a=1, b=0.6, c=0.3, d=0.5
+111: num_points: 750, a=1, b=0.8, c=0.2, d=0.4
+112: num_points: 750, a=1, b=0.7, c=0.4, d=0.4
+113: num_points: 750, a=1, b=0.6, c=0.3, d=0.5
+114: num_points: 800, a=1, b=0.8, c=0.2, d=0.4
+115: num_points: 800, a=1, b=0.7, c=0.4, d=0.4
+116: num_points: 800, a=1, b=0.6, c=0.3, d=0.5
+117: num_points: 800, a=1, b=0.8, c=0.2, d=0.4
+118: num_points: 800, a=1, b=0.7, c=0.4, d=0.4
+119: num_points: 800, a=1, b=0.6, c=0.3, d=0.5
+120: num_points: 300, a=1, b=0.8, c=0.2, d=0.4
+121: num_points: 300, a=1, b=0.7, c=0.4, d=0.4
+122: num_points: 300, a=1, b=0.6, c=0.3, d=0.5
+123: num_points: 300, a=1, b=0.8, c=0.2, d=0.4
+124: num_points: 300, a=1, b=0.7, c=0.4, d=0.4
+125: num_points: 300, a=1, b=0.6, c=0.3, d=0.5
+126: num_points: 350, a=1, b=0.8, c=0.2, d=0.4
+127: num_points: 350, a=1, b=0.7, c=0.4, d=0.4
+128: num_points: 350, a=1, b=0.6, c=0.3, d=0.5
+129: num_points: 350, a=1, b=0.8, c=0.2, d=0.4
+130: num_points: 350, a=1, b=0.7, c=0.4, d=0.4
+131: num_points: 350, a=1, b=0.6, c=0.3, d=0.5
+132: num_points: 400, a=1, b=0.8, c=0.2, d=0.4
+133: num_points: 400, a=1, b=0.7, c=0.4, d=0.4
+134: num_points: 400, a=1, b=0.6, c=0.3, d=0.5
+135: num_points: 400, a=1, b=0.8, c=0.2, d=0.4
+136: num_points: 400, a=1, b=0.7, c=0.4, d=0.4
+137: num_points: 400, a=1, b=0.6, c=0.3, d=0.5
+138: num_points: 450, a=1, b=0.8, c=0.2, d=0.4
+139: num_points: 450, a=1, b=0.7, c=0.4, d=0.4
+140: num_points: 450, a=1, b=0.6, c=0.3, d=0.5
+141: num_points: 450, a=1, b=0.8, c=0.2, d=0.4
+142: num_points: 450, a=1, b=0.7, c=0.4, d=0.4
+143: num_points: 450, a=1, b=0.6, c=0.3, d=0.5
+144: num_points: 500, a=1, b=0.8, c=0.2, d=0.4
+145: num_points: 500, a=1, b=0.7, c=0.4, d=0.4
+146: num_points: 500, a=1, b=0.6, c=0.3, d=0.5
+147: num_points: 500, a=1, b=0.8, c=0.2, d=0.4
+148: num_points: 500, a=1, b=0.7, c=0.4, d=0.4
+149: num_points: 500, a=1, b=0.6, c=0.3, d=0.5
