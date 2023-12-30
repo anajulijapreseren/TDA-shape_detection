@@ -19,7 +19,7 @@ Output: Point clouds with a central spherical region removed, along with origina
 import numpy as np
 import pickle
 
-def remove_center_ball(point_cloud, radius=0.3):
+def remove_center_ball(point_cloud, radius=0.5):
     """
     Removes points within a given radius from the center of the point cloud.
 
@@ -33,7 +33,7 @@ def remove_center_ball(point_cloud, radius=0.3):
 if __name__ == "__main__":
     # Load the scaled shape data
     #with open('Data/scaled_centered_shapes_data.pkl', 'rb') as file:
-    with open('Data/m_scaled_centered_shapes_data.pkl', 'rb') as file:
+    with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
         scaled_shape_data = pickle.load(file)
 
     # Process each shape to remove the center ball
@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
     # Save the modified data
     #with open('Data/modified_shapes_data.pkl', 'wb') as file:
-    with open('Data/m_modified_shapes_data.pkl', 'wb') as file:
+    with open('Data/m_modified_shapes_data1.pkl', 'wb') as file:
         pickle.dump(modified_shape_data, file)
 
     print("Modified shapes (with center ball removed) and labels saved successfully.")
