@@ -1,5 +1,7 @@
 import numpy as np
 import pickle
+from m_translate_rotate import translate, rotate
+import random
 
 rand = 0.05
 
@@ -30,7 +32,7 @@ def create_line_segment(num_points=300, radius=1.0, rand=rand):
     z = np.random.uniform(-rand, rand, num_points)
     return np.column_stack((x, y, z))
 
-# OZJI LINE SEGMENT
+# OZJA PALCKA
 # def create_line_segment(num_points=300, radius=1.0, rand=rand/5):
 #     x = np.random.uniform(-radius/2, radius/2, num_points) 
 #     y = np.random.uniform(-rand, rand, num_points)
@@ -74,7 +76,6 @@ def create_perturbed_3_disc(num_points=300, a=1, b=0.8, c=0.6, rand=rand):
     return np.column_stack((x_perturbed, y_perturbed, z_perturbed))
 
 
-
 def create_rectangle(num_points=300, a=1, b=0.4, rand=rand):
     x = np.random.uniform(-a/2 + rand, a/2 + rand, num_points)
     y = np.random.uniform(-b/2 + rand, b/2 + rand, num_points)
@@ -82,8 +83,7 @@ def create_rectangle(num_points=300, a=1, b=0.4, rand=rand):
     return np.column_stack((x, y, z))
 
 
-#tu notri dodaš zadeve, ki jih na novo napišeš, vse te oblike bo generiralo in jih tudi označilo z 0,1,2...glede na obliko
-#kako je označena kakšna oblika si lahko pogledaš v label_mapping.txt
+
 
 def main():
     shape_generators = {
@@ -102,49 +102,57 @@ def main():
     label_mapping = {}
     parameters_data = {}
     
-    abc_list = [[1, 0.8, 0.2], [1, 0.7, 0.4], [1, 0.6, 0.4], [1, 0.6, 0.3]]
-    torus_list = [[1, 0.3], [1, 0.4], [1, 0.5], [1, 0.6]]
-    other_list = [0.8, 0.9, 1, 1.1]
-    rectangle_list = [[1, 0.8], [1.2, 0.6], [1.3, 0.6], [0.5, 0.9]]
 
     for label, generator in enumerate(shape_generators.items()):
         shape_name, shape_func = generator
         label_mapping[shape_name] = label
-        #tu je koliko vsake oblike bo zgeneriralo (to da je vsake oblike enako veliko je dobro za trening modela)
+        
         for i in range(20):
-            n = 400 + (((i//4) - 2) * 50) 
+            n = random.randint(400, 700)
             if shape_name == 'ellipsoid' or shape_name == 'perturbed_3_disc':
-                a, b, c = abc_list[i%4]
+                a = random.randint(1,80)
+                b = a * random.uniform(0.5, 0.7)
+                c = a * random.uniform(0.2, 0.5)
                 if shape_name == 'perturbed_3_disc':
                     n += 300
                 point_cloud = shape_func(num_points=n, a=a, b=b, c=c)
                 par = (f"num_points: {n}, a={a}, b={b}, c={c}")
             elif shape_name == 'torus':
-                R, r = torus_list[i%4]
+                R = random.randint(1, 80)
+                r = R * random.uniform(0.2, 0.7)
                 point_cloud = shape_func(num_points=n, R=R, r=r)
                 par = (f"num_points: {n}, R={R}, r={r}")
             elif shape_name == 'rectangle':
-                a, b = rectangle_list[i%4]
+                a = random.randint(1,80)
+                b = a * random.uniform(0.3, 1.7)
                 point_cloud = shape_func(num_points=n, a=a, b=b)
                 par = (f"num_points: {n}, a={a}, b={b}")
             else:
-                r = other_list[i%4]
+                r = random.uniform(0.5, 80)
                 point_cloud = shape_func(num_points=n, radius=r)
                 par = (f"num_points: {n}, r={r}")
+            # random translation:
+            t_vec = np.random.uniform(-20, 20, 3)
+            # random rotation
+            r_vec = np.random.uniform(-1,1,3)
+            phi = random.random() * 2 * np.pi
+
+            rotated = rotate(point_cloud, r_vec, phi)
+            translated = translate(rotated, t_vec)
             index = label * 20 + i
-            parameters_data[index] = par
-            shape_data.append((index, point_cloud, label))  
+            parameters_data[index] = par + f", rotation: {r_vec}, {phi}, translation: {t_vec}"
+            shape_data.append((index, translated, label))  
             
 
 
-    with open('m_shapes_data.pkl', 'wb') as file:
+    with open('m_random_shapes_data.pkl', 'wb') as file:
         pickle.dump(shape_data, file)
 
-    with open('m_label_mapping.txt', 'w') as file:
+    with open('m_random_label_mapping.txt', 'w') as file:
         for shape_name, label in label_mapping.items():
             file.write(f"{shape_name}:{label}\n")
     
-    with open('m_parameters_data.txt', 'w') as file:
+    with open('m_random_parameters_data.txt', 'w') as file:
         for index, data in parameters_data.items():
             file.write(f"{index}: {data}\n")
 
