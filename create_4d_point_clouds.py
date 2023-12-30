@@ -119,7 +119,7 @@ def main():
     for label, generator in enumerate(shape_generators.items()):
         shape_name, shape_func = generator
         label_mapping[shape_name] = label
-        for i in range(30):
+        for i in range(20):
             n = 400 + (((i//4) - 2) * 50)
             if shape_name == '4d_ellipsoid' or shape_name == '4d_perturbed_3_disc':
                 a, b, c = random.choice(abc_list)

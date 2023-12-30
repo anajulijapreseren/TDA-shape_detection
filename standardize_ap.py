@@ -44,7 +44,7 @@ if __name__ == "__main__":
     # Load the original shape data
     #with open('Data/shapes_data.pkl', 'rb') as file:
     #with open('Shape_data/m_shapes_data.pkl', 'rb') as file:
-    with open('Shape_data/m_rotated_shapes_data.pkl', 'rb') as file:
+    with open('Shape_data/m_rotated_translated_shapes_data.pkl', 'rb') as file:
         original_shape_data = pickle.load(file)
 
     # Apply the scaling and centering function

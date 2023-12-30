@@ -82,7 +82,7 @@ def main():
         shape_name, shape_func = generator
         label_mapping[shape_name] = label
 
-        for i in range(30):
+        for i in range(20):
             n = 400 + (((i//6) - 2) * 50) 
             if shape_name in ['4d_ellipsoid', '4d_perturbed_4_disc']:
                 a, b, c, d = abcd_list[i%3]
@@ -100,14 +100,14 @@ def main():
             
 
 
-    with open('m_4d_shapes_data.pkl', 'wb') as file:
+    with open('Shape_data/m_4d_shapes_data.pkl', 'wb') as file:
         pickle.dump(shape_data, file)
 
-    with open('m_4d_label_mapping.txt', 'w') as file:
+    with open('Shape_data/m_4d_label_mapping.txt', 'w') as file:
         for shape_name, label in label_mapping.items():
             file.write(f"{shape_name}:{label}\n")
     
-    with open('m_4d_parameters_data.txt', 'w') as file:
+    with open('Shape_data/m_4d_parameters_data.txt', 'w') as file:
         for index, data in parameters_data.items():
             file.write(f"{index}: {data}\n")
 
