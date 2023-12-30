@@ -137,14 +137,14 @@ def main():
             
 
 
-    with open('m_shapes_data.pkl', 'wb') as file:
+    with open('Shape_data/m_shapes_data.pkl', 'wb') as file:
         pickle.dump(shape_data, file)
 
-    with open('m_label_mapping.txt', 'w') as file:
+    with open('Shape_data/m_label_mapping.txt', 'w') as file:
         for shape_name, label in label_mapping.items():
             file.write(f"{shape_name}:{label}\n")
     
-    with open('m_parameters_data.txt', 'w') as file:
+    with open('Shape_data/m_parameters_data.txt', 'w') as file:
         for index, data in parameters_data.items():
             file.write(f"{index}: {data}\n")
 

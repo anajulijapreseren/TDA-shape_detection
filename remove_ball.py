@@ -31,21 +31,42 @@ def remove_center_ball(point_cloud, radius=0.5):
     return point_cloud[distance_from_center > radius]
 
 if __name__ == "__main__":
+
+    #-----------------REMOVE BIG BALL-------------------------------------------
     # Load the scaled shape data
-    #with open('Data/scaled_centered_shapes_data.pkl', 'rb') as file:
-    with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
+    with open('Data/TR_scaled_centered_shapes_data.pkl', 'rb') as file:
+    #with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
         scaled_shape_data = pickle.load(file)
 
     # Process each shape to remove the center ball
     modified_shape_data = []
     for idx, point_cloud, label in scaled_shape_data:
-        modified_point_cloud = remove_center_ball(point_cloud)
+        modified_point_cloud = remove_center_ball(point_cloud,radius=0.5)
         modified_shape_data.append((idx, modified_point_cloud, label))
 
     # Save the modified data
-    #with open('Data/modified_shapes_data.pkl', 'wb') as file:
-    with open('Data/m_modified_shapes_data1.pkl', 'wb') as file:
+    with open('Data/TR_modified_shapes_data.pkl', 'wb') as file:
+    #with open('Data/m_modified_shapes_data1.pkl', 'wb') as file:
         pickle.dump(modified_shape_data, file)
 
-    print("Modified shapes (with center ball removed) and labels saved successfully.")
+    print("Modified shapes (with BIG center ball removed) and labels saved successfully.")
+
+    #-----------------REMOVE SMALL BALL-------------------------------------------
+    # Load the scaled shape data
+    with open('Data/TR_scaled_centered_shapes_data.pkl', 'rb') as file:
+    #with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
+        scaled_shape_data = pickle.load(file)
+
+    # Process each shape to remove the center ball
+    modified_shape_data = []
+    for idx, point_cloud, label in scaled_shape_data:
+        modified_point_cloud = remove_center_ball(point_cloud,radius=0.2)
+        modified_shape_data.append((idx, modified_point_cloud, label))
+
+    # Save the modified data
+    with open('Data/TR_modified_shapes_data_small.pkl', 'wb') as file:
+    #with open('Data/m_modified_shapes_data1.pkl', 'wb') as file:
+        pickle.dump(modified_shape_data, file)
+
+    print("Modified shapes (with SMALL center ball removed) and labels saved successfully.")
 
