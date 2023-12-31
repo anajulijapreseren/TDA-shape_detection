@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
     #----------------------------------------ORIGINAL----------------------------------------------------------------
     # Load the scaled and centered shape data
-    with open('Data/TR_scaled_centered_shapes_data.pkl', 'rb') as file:
+    with open('Data/random_scaled_centered_shapes_data.pkl', 'rb') as file:
     #with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
         shape_data = pickle.load(file)
 
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     processed_data = parallel_process_shapes(shape_data)
 
     # Save the results including indices
-    with open('Data/TR_flattened_images_with_indices.pkl', 'wb') as f:
+    with open('Data/random_flattened_images_with_indices.pkl', 'wb') as f:
     #with open('Data/m_flattened_images_with_indices1.pkl', 'wb') as f:
         pickle.dump(processed_data, f)
 
@@ -84,7 +84,7 @@ if __name__ == "__main__":
     
     #----------------------------------------REMOVED BIG BALL----------------------------------------------------------------
     # Load the scaled and centered shape data without the ball of points
-    with open('Data/TR_modified_shapes_data.pkl', 'rb') as file:
+    with open('Data/random_modified_shapes_data.pkl', 'rb') as file:
     #with open('Data/m_modified_shapes_data1.pkl', 'rb') as file:
         shape_data = pickle.load(file)
 
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     processed_data = parallel_process_shapes(shape_data)
 
     # Save the results including indices
-    with open('Data/TR_flattened_images_removed_ball_with_indices.pkl', 'wb') as f:
+    with open('Data/random_flattened_images_removed_ball_with_indices.pkl', 'wb') as f:
     #with open('Data/m_flattened_images_removed_ball_with_indices1.pkl', 'wb') as f:
         pickle.dump(processed_data, f)
 
@@ -100,7 +100,7 @@ if __name__ == "__main__":
 
     #----------------------------------------REMOVED SMALL BALL----------------------------------------------------------------
     # Load the scaled and centered shape data without the ball of points
-    with open('Data/TR_modified_shapes_data_small.pkl', 'rb') as file:
+    with open('Data/random_modified_shapes_data_small.pkl', 'rb') as file:
     #with open('Data/m_modified_shapes_data1.pkl', 'rb') as file:
         shape_data = pickle.load(file)
 
@@ -108,7 +108,7 @@ if __name__ == "__main__":
     processed_data = parallel_process_shapes(shape_data)
 
     # Save the results including indices
-    with open('Data/TR_flattened_images_removed_ball_with_indices_small.pkl', 'wb') as f:
+    with open('Data/random_flattened_images_removed_ball_with_indices_small.pkl', 'wb') as f:
     #with open('Data/m_flattened_images_removed_ball_with_indices1.pkl', 'wb') as f:
         pickle.dump(processed_data, f)
 

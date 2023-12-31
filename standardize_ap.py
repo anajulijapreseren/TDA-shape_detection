@@ -44,7 +44,7 @@ if __name__ == "__main__":
     # Load the original shape data
     #with open('Data/shapes_data.pkl', 'rb') as file:
     #with open('Shape_data/m_shapes_data.pkl', 'rb') as file:
-    with open('Shape_data/m_rotated_translated_shapes_data.pkl', 'rb') as file:
+    with open('Shape_data/m_random_shapes_data.pkl', 'rb') as file:
         original_shape_data = pickle.load(file)
 
     # Apply the scaling and centering function
@@ -54,7 +54,7 @@ if __name__ == "__main__":
         scaled_shape_data.append((idx, scaled_and_centered_point_cloud, label))  # Keep the original index
 
     # Save the scaled and centered data with indices
-    with open('Data/TR_scaled_centered_shapes_data.pkl', 'wb') as file:
+    with open('Data/random_scaled_centered_shapes_data.pkl', 'wb') as file:
     #with open('Data/m_scaled_centered_shapes_data1.pkl', 'wb') as file:
         pickle.dump(scaled_shape_data, file)
 

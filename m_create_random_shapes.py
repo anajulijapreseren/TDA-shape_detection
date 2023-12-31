@@ -108,13 +108,13 @@ def main():
         label_mapping[shape_name] = label
         
         for i in range(20):
-            n = random.randint(400, 700)
+            n = 400
             if shape_name == 'ellipsoid' or shape_name == 'perturbed_3_disc':
                 a = random.randint(1,80)
                 b = a * random.uniform(0.5, 0.7)
                 c = a * random.uniform(0.2, 0.5)
                 if shape_name == 'perturbed_3_disc':
-                    n += 300
+                    n += 200
                 point_cloud = shape_func(num_points=n, a=a, b=b, c=c)
                 par = (f"num_points: {n}, a={a}, b={b}, c={c}")
             elif shape_name == 'torus':
@@ -145,14 +145,14 @@ def main():
             
 
 
-    with open('m_random_shapes_data.pkl', 'wb') as file:
+    with open('Shape_data/m_random_shapes_data.pkl', 'wb') as file:
         pickle.dump(shape_data, file)
 
-    with open('m_random_label_mapping.txt', 'w') as file:
+    with open('Shape_data/m_random_label_mapping.txt', 'w') as file:
         for shape_name, label in label_mapping.items():
             file.write(f"{shape_name}:{label}\n")
     
-    with open('m_random_parameters_data.txt', 'w') as file:
+    with open('Shape_data/m_random_parameters_data.txt', 'w') as file:
         for index, data in parameters_data.items():
             file.write(f"{index}: {data}\n")
 

@@ -56,21 +56,57 @@ def parallel_process_shapes_4d(shape_data, num_processes=8):
     return results
 
 if __name__ == "__main__":
-    # Load the scaled and centered 4D shape data
-    with open('Data/4d_scaled_centered_shapes_data.pkl', 'rb') as file:
-        shape_data_4d = pickle.load(file)
-
-    # Start timer
     start_time = time.time()
+    #----------------------------------------ORIGINAL----------------------------------------------------------------
+    # # Load the scaled and centered shape data
+    # with open('Data/4d_scaled_centered_shapes_data.pkl', 'rb') as file:
+    # #with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
+    #     shape_data = pickle.load(file)
 
-    # Process 4D shapes in parallel
-    processed_data_4d = parallel_process_shapes_4d(shape_data_4d)
+    # # Start timer
+    # start_time = time.time()
+
+    # # Process shapes in parallel
+    # processed_data = parallel_process_shapes_4d(shape_data)
+
+    # # Save the results including indices
+    # with open('Data/4d_flattened_images_with_indices.pkl', 'wb') as f:
+    # #with open('Data/m_flattened_images_with_indices1.pkl', 'wb') as f:
+    #     pickle.dump(processed_data, f)
+
+    # print("All original 4D shapes processed and results saved.")
+    
+    #----------------------------------------REMOVED BIG BALL----------------------------------------------------------------
+    # Load the scaled and centered shape data without the ball of points
+    with open('Data/4d_modified_shapes_data.pkl', 'rb') as file:
+    #with open('Data/m_modified_shapes_data1.pkl', 'rb') as file:
+        shape_data = pickle.load(file)
+
+    # Process shapes in parallel
+    processed_data = parallel_process_shapes_4d(shape_data)
 
     # Save the results including indices
-    with open('Data/4d_flattened_images_with_indices.pkl', 'wb') as f:
-        pickle.dump(processed_data_4d, f)
+    with open('Data/4d_flattened_images_removed_ball_with_indices.pkl', 'wb') as f:
+    #with open('Data/m_flattened_images_removed_ball_with_indices1.pkl', 'wb') as f:
+        pickle.dump(processed_data, f)
 
-    print("All 4D shapes processed and results saved.")
+    print("All shapes without BIG ball of points processed and results saved.")
+
+    #----------------------------------------REMOVED SMALL BALL----------------------------------------------------------------
+    # Load the scaled and centered shape data without the ball of points
+    with open('Data/4d_modified_shapes_data_small.pkl', 'rb') as file:
+    #with open('Data/m_modified_shapes_data1.pkl', 'rb') as file:
+        shape_data = pickle.load(file)
+
+    # Process shapes in parallel
+    processed_data = parallel_process_shapes_4d(shape_data)
+
+    # Save the results including indices
+    with open('Data/4d_flattened_images_removed_ball_with_indices_small.pkl', 'wb') as f:
+    #with open('Data/m_flattened_images_removed_ball_with_indices1.pkl', 'wb') as f:
+        pickle.dump(processed_data, f)
+
+    print("All shapes without SMALL ball of points processed and results saved.")
 
     # End timer
     end_time = time.time()
@@ -78,3 +114,4 @@ if __name__ == "__main__":
     # Calculate duration
     duration = end_time - start_time
     print(f"Processing time: {duration:.2f} seconds")
+

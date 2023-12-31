@@ -13,6 +13,7 @@ def remove_center_ball_4d(point_cloud, radius=0.5):
     return point_cloud[distance_from_center > radius]
 
 if __name__ == "__main__":
+#-----------------REMOVE BIG BALL-------------------------------------------
     # Load the scaled shape data for 4D
     with open('Data/4d_scaled_centered_shapes_data.pkl', 'rb') as file:
         scaled_shape_data_4d = pickle.load(file)
@@ -27,4 +28,25 @@ if __name__ == "__main__":
     with open('Data/4d_modified_shapes_data.pkl', 'wb') as file:
         pickle.dump(modified_shape_data_4d, file)
 
-    print("Modified 4D shapes (with center 4D ball removed) and labels saved successfully.")
+    print("Modified 4D shapes (with BIG center 4D ball removed) and labels saved successfully.")
+
+
+
+    #-----------------REMOVE SMALL BALL-------------------------------------------
+    # Load the scaled shape data
+    with open('Data/4d_scaled_centered_shapes_data.pkl', 'rb') as file:
+    #with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
+        scaled_shape_data_4d = pickle.load(file)
+
+    # Process each shape to remove the center ball
+    modified_shape_data_4d = []
+    for idx, point_cloud, label in scaled_shape_data_4d:
+        modified_point_cloud = remove_center_ball_4d(point_cloud,radius=0.2)
+        modified_shape_data_4d.append((idx, modified_point_cloud, label))
+
+    # Save the modified data
+    with open('Data/4d_modified_shapes_data_small.pkl', 'wb') as file:
+    #with open('Data/m_modified_shapes_data1.pkl', 'wb') as file:
+        pickle.dump(modified_shape_data_4d, file)
+
+    print("Modified 4D shapes (with SMALL center 4D ball removed) and labels saved successfully.")

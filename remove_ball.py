@@ -34,7 +34,7 @@ if __name__ == "__main__":
 
     #-----------------REMOVE BIG BALL-------------------------------------------
     # Load the scaled shape data
-    with open('Data/TR_scaled_centered_shapes_data.pkl', 'rb') as file:
+    with open('Data/random_scaled_centered_shapes_data.pkl', 'rb') as file:
     #with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
         scaled_shape_data = pickle.load(file)
 
@@ -45,7 +45,7 @@ if __name__ == "__main__":
         modified_shape_data.append((idx, modified_point_cloud, label))
 
     # Save the modified data
-    with open('Data/TR_modified_shapes_data.pkl', 'wb') as file:
+    with open('Data/random_modified_shapes_data.pkl', 'wb') as file:
     #with open('Data/m_modified_shapes_data1.pkl', 'wb') as file:
         pickle.dump(modified_shape_data, file)
 
@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
     #-----------------REMOVE SMALL BALL-------------------------------------------
     # Load the scaled shape data
-    with open('Data/TR_scaled_centered_shapes_data.pkl', 'rb') as file:
+    with open('Data/random_scaled_centered_shapes_data.pkl', 'rb') as file:
     #with open('Data/m_scaled_centered_shapes_data1.pkl', 'rb') as file:
         scaled_shape_data = pickle.load(file)
 
@@ -64,7 +64,7 @@ if __name__ == "__main__":
         modified_shape_data.append((idx, modified_point_cloud, label))
 
     # Save the modified data
-    with open('Data/TR_modified_shapes_data_small.pkl', 'wb') as file:
+    with open('Data/random_modified_shapes_data_small.pkl', 'wb') as file:
     #with open('Data/m_modified_shapes_data1.pkl', 'wb') as file:
         pickle.dump(modified_shape_data, file)
 

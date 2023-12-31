@@ -41,15 +41,15 @@ def combine_data(file_path1, file_path2, file_path3=None):
     return combined_data
 
 # Paths to your files
-file_path1 = 'Data/TR_flattened_images_with_indices.pkl'
-file_path2 = 'Data/TR_flattened_images_removed_ball_with_indices.pkl'
-file_path3 = 'Data/TR_flattened_images_removed_ball_with_indices_small.pkl'  # Replace with the path to your third file
+file_path1 = 'Data/random_flattened_images_with_indices.pkl'
+file_path2 = 'Data/random_flattened_images_removed_ball_with_indices.pkl'
+file_path3 = 'Data/random_flattened_images_removed_ball_with_indices_small.pkl'  # Replace with the path to your third file
 
 # Combine the data from three files
 combined_data = combine_data(file_path1, file_path2, file_path3)
 
 # Save the combined data
-with open('Data/TR_combined3_flattened_data_with_indices.pkl', 'wb') as file:
+with open('Data/random_combined3_flattened_data_with_indices.pkl', 'wb') as file:
     pickle.dump(combined_data, file)
 
 print("Combined data saved successfully.")
